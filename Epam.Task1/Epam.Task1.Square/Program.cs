@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,66 +12,32 @@ namespace Epam.Task1.Square
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a positive odd number");
-            int number;
-            if (!int.TryParse(Console.ReadLine(), out number) || number < 0 || number % 2 == 0)
+            try
             {
-                Console.WriteLine("Incorrect number");
+                PrintSquareFirst(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        static void PrintSquareFirst(string str)
+        {
+            uint number;
+            if (!uint.TryParse(str, out number) || number % 2 == 0)
+            {
+                throw new Exception("Incorrect number");
             }
             else
             {
-                PrintSquareFirst(number);
-                Console.WriteLine("////////////");
-                PrintSquareSecond(number);
-            }
-        }
-        static void PrintSquareFirst(int number)
-        {
-            int middle = number / 2;
-            for (int i = 0; i < number; i++)
-            {
-                if (i == middle)
+                uint middle = number / 2;
+                for (int i = 0; i < number; i++)
                 {
                     for (int j = 0; j < number; j++)
                     {
-                        if (j == middle)
-                        {
-                            Console.Write(' ');
-                        }
-                        else
-                        {
-                            Console.Write('*');
-                        }
-
+                        Console.Write(i == middle && j == middle ? ' ' : '*');
                     }
-                }
-                else
-                {
-                    for (int j = 0; j < number; j++)
-                    {
-                        Console.Write('*');
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
-        static void PrintSquareSecond(int number)
-        {
-            StringBuilder stringSimple = new StringBuilder();
-            stringSimple.Append('*',(int)number);
-            int middle = number / 2;
-            for (int i = 0; i < number; i++)
-            {
-                if (i != middle)
-                {
-                    Console.WriteLine(stringSimple);
-                }
-                else
-                {
-                    StringBuilder stringNotSimple = new StringBuilder();
-                    stringNotSimple.Append('*',middle);
-                    stringNotSimple.Append(' ',1);
-                    stringNotSimple.Append('*', middle);
-                    Console.WriteLine(stringNotSimple);
+                    Console.WriteLine();
                 }
             }
         }

@@ -11,25 +11,31 @@ namespace Epam.Task1.Sequence
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a positive number");
-            uint number;
-            if (!uint.TryParse(Console.ReadLine(), out number))
+            try
             {
-                Console.WriteLine("Incorrect number");
+                CreateString(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+        }
+        static void CreateString(string str)
+        {
+            uint number;
+            if (!uint.TryParse(str, out number) || number==0)
+            {
+                throw new Exception("Incorrect number");
             }
             else
             {
-                Console.WriteLine(CreateString(number));
+                for (uint i = 1; i < number; i++)
+                {
+                    Console.Write(i + ", ");
+                }
+                Console.WriteLine(number);
             }
-        }
-        static StringBuilder CreateString(uint number)
-        {
-            StringBuilder result = new StringBuilder();
-            for (uint i = 1; i < number; i++)
-            {
-                result.Append(i + ", ");
-            }
-            result.Append(number);
-            return result;
         }
     }
 }
