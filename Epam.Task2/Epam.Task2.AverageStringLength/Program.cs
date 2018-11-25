@@ -10,19 +10,21 @@ namespace Epam.Task2.AverageStringLength
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите строку");
             string text = Console.ReadLine();
-            Console.WriteLine(text);
             int sum = 0, count = 0;
-            char[] separeters = { ' ', ',', '!', '.', '?','0','1','2','3','4','5','6','7','8','9'};
-            foreach (var word in text.Split(separeters))
+            foreach (var c in text)
             {
-                if (word.Length!=0)
+                if (Char.IsSeparator(c) && sum != 0)
                 {
-                    sum += word.Length;
                     count++;
                 }
+                else if (Char.IsLetter(c))
+                {
+                    sum++;
+                }
             }
-            Console.WriteLine($"Average lenght is {Math.Round((double)sum / count)}");
+            Console.WriteLine($"Средняя длина слова = {Math.Round((double)sum / (count + 1))}");
         }
     }
 }

@@ -14,13 +14,14 @@ namespace Epam.Task2.CharDoubler
             StringBuilder first = new StringBuilder(Console.ReadLine());
             Console.Write("Введите вторую строку:");
             StringBuilder second = new StringBuilder(Console.ReadLine());
-            foreach (var c in second.ToString())
+            for (int pos = 0; pos < second.Length; )
             {
+                char c = second[pos];
                 for (int i = 0; i < first.Length; i++)
                 {
-                    if (c == first[i])
+                    if (second[pos] == first[i])
                     {
-                        first.Insert(i, c.ToString());
+                        first.Insert(i, c);
                         i++;
                     }
                 }
