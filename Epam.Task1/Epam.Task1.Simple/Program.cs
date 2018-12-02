@@ -23,7 +23,6 @@ namespace Epam.Task1.Simple
         }
         static bool CheckNumber(uint number)
         {
-            //Достаточно дойти до корня заданного числа
             int sqrtNumber = (int)Math.Sqrt(number);
             for (int i = 2; i < sqrtNumber; i++)
             {
