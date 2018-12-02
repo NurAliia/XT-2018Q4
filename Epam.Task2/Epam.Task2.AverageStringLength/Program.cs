@@ -10,7 +10,7 @@ namespace Epam.Task2.AverageStringLength
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите строку");
+            Console.WriteLine("Enter a string");
             string text = Console.ReadLine();
             int sum = 0, count = 0;
             foreach (var c in text)
@@ -24,7 +24,7 @@ namespace Epam.Task2.AverageStringLength
                     sum++;
                 }
             }
-            Console.WriteLine($"Средняя длина слова = {Math.Round((double)sum / (count + 1))}");
+            Console.WriteLine($"Average length of word  = {Math.Round((double)sum / (count + 1))}");
         }
     }
 }

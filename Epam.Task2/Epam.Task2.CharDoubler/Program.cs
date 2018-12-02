@@ -10,9 +10,9 @@ namespace Epam.Task2.CharDoubler
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите первую строку:");
+            Console.Write("Enter the first string:");
             StringBuilder first = new StringBuilder(Console.ReadLine());
-            Console.Write("Введите вторую строку:");
+            Console.Write("Enter the second string:");
             StringBuilder second = new StringBuilder(Console.ReadLine());
             for (int pos = 0; pos < second.Length; )
             {
@@ -35,7 +35,7 @@ namespace Epam.Task2.CharDoubler
                     break;
                 }
             }
-            Console.WriteLine($"Результирующая строка:{first}");
+            Console.WriteLine($"Result string: {first}");
         }
         static string NewSecondString(string str)
         {

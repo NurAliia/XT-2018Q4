@@ -21,12 +21,9 @@ namespace Epam.Task2.FontAdjustment
             Font font = new Font();
             while (true)
             {
-                Console.Write("Параметры надписи: ");
+                Console.Write("Parameters the  inscription: ");
                 Check(font);
-                Console.WriteLine($"Введите {Environment.NewLine}    " +
-                    $"1:bold {Environment.NewLine}    " +
-                    $"2:italic {Environment.NewLine}    " +
-                    $"3:underline");
+                Console.WriteLine($"Enter {Environment.NewLine} 1:bold {Environment.NewLine} 2:italic {Environment.NewLine} 3:underline");
                 if (int.TryParse(Console.ReadLine(), out var digit))
                 {
                     if (digit == 3)
