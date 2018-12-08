@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45C6457F-B3C5-4247-ACB6-8AEB71BD802D}</ProjectGuid>
+    <ProjectGuid>{31D9BE4A-8131-4ACD-8E1E-5EC9ACD28CD0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Epam.Task3.VectorGraphicsEditor</RootNamespace>
-    <AssemblyName>Epam.Task3.VectorGraphicsEditor</AssemblyName>
+    <RootNamespace>Epam.Task3.User23</RootNamespace>
+    <AssemblyName>Epam.Task3.User23</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,18 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Figure\Figure.cs" />
-    <Compile Include="Figure\Line.cs" />
-    <Compile Include="Figure\Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Figure\Rectangle.cs">
-      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
-    </Compile>
-    <Compile Include="Figure\Ring.cs" />
-    <Compile Include="Figure\Round.cs" />
-    <Compile Include="Figure\Circle.cs" />
-    <Compile Include="RandomProject.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

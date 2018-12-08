@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Epam.Task3.User\Epam.Task3.User23.csproj">
-      <Project>{bd4c5e33-2006-468e-ad07-a1faadb2b032}</Project>
+    <ProjectReference Include="..\Epam.Task3.User23\Epam.Task3.User23.csproj">
+      <Project>{31D9BE4A-8131-4ACD-8E1E-5EC9ACD28CD0}</Project>
       <Name>Epam.Task3.User23</Name>
     </ProjectReference>
   </ItemGroup>

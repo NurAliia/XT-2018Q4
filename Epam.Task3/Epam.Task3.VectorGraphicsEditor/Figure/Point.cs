@@ -12,6 +12,15 @@ namespace Epam.Task3.VectorGraphicsEditor
         /// <summary>
         /// Initializes a new instance of the Point class.
         /// </summary>
+        public Point()
+        {
+            this.X = new RandomProject().GetNext;
+            this.Y = new RandomProject().GetNext;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the Point class.
+        /// </summary>
         /// <param name="x">first coordinate of the point</param>
         /// <param name="y">second coordinate of the point</param>
         public Point(double x, double y)

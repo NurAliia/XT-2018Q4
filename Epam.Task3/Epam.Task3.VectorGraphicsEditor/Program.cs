@@ -6,26 +6,66 @@ namespace Epam.Task3.VectorGraphicsEditor
 {
     using System;
 
-    /// <summary>  
-    ///  This class performs a main function.  
-    /// </summary>  
+    /// <summary>
+    ///  This class performs a main function.
+    /// </summary>
     public class Program
     {
         /// <summary>
-        /// Create object Figures
+        /// Create objects Figure
         /// </summary>
         public static void Main()
         {
-            Figure line = new Line(new Point(2, 2), new Point(4, 4));
-            Console.WriteLine(line.ToDisplay());
-            Figure circle = new Circle(new Point(2, 4), new Point(7, 8));
-            Console.WriteLine(circle.ToDisplay());
-            Figure rectangle = new Rectangle(new Point(2, -6), new Point(4, 9));
-            Console.WriteLine(rectangle.ToDisplay());
-            Figure round = new Round(new Point(2, 2), new Point(4, 4));
-            Console.WriteLine(round.ToDisplay());
-            Figure ring = new Ring(new Point(2, 2), new Point(4, 4), new Point(5, 9));
-            Console.WriteLine(ring.ToDisplay());
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(CreateFigures().ToDisplay());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Create object Figure
+        /// </summary>
+        /// <returns>new Figure</returns>
+        public static Figure CreateFigures()
+        {
+            Console.WriteLine($"Enter the  number of figure {Environment.NewLine}1 - Line {Environment.NewLine}2 - Circle{Environment.NewLine}3 - Rectangle{Environment.NewLine}4 - Round{Environment.NewLine}5 - Ring");
+            Figure figure = null;
+            if (int.TryParse(Console.ReadLine(), out int numberOfFigure) && numberOfFigure > 0 && numberOfFigure < 6)
+            {
+                switch (numberOfFigure)
+                {
+                    case 1:
+                        figure = new Line(new Point(), new Point());
+                        break;
+                    case 2:
+                        figure = new Circle(new Point(), new Point());
+                        break;
+                    case 3:
+                        figure = new Rectangle(new Point(), new Point());
+                        break;
+                    case 4:
+                        figure = new Round(new Point(), new Point());
+                        break;
+                    case 5:
+                        figure = new Ring(new Point(), new Point(), new Point());
+                        break;
+                    default:
+                        return figure;
+                }
+
+                return figure;
+            }
+            else
+            {
+                throw new Exception($" {Environment.NewLine}Please, enter a positive number from 1 to 5 {Environment.NewLine}");
+            }
         }
     }
 }
