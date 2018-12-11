@@ -23,7 +23,7 @@ namespace Epam.Task4.DynamicArray
         /// <summary>
         /// Declare variable index
         /// </summary>
-        private int index = 0;
+        private int index = -1;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DynamicArray{T}"/> class.
@@ -153,7 +153,12 @@ namespace Epam.Task4.DynamicArray
         /// <returns>Convert Dynamic array to array</returns>
         public T[] ToArray()
         {
-            return this.array;
+            T[] mas = new T[Length];
+            for (int i = 0; i < Length; i++)
+            {
+                mas[i] = array[i];
+            }
+            return mas;
         }
 
         /// <summary>
@@ -227,13 +232,14 @@ namespace Epam.Task4.DynamicArray
         /// <returns>new Enumerator </returns>
         public IEnumerator<T> GetEnumerator()
         {
+            int i = 0;
             foreach (T t in this.array)
             {
-                if (t == null)
+                i++;
+                if (i > Length)
                 {
                     break;
                 }
-
                 yield return t;
             }
         }

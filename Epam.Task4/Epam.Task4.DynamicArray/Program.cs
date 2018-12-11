@@ -41,18 +41,16 @@ namespace Epam.Task4.DynamicArray
                 Console.WriteLine($"Capacity = {d.Capacity}");
                 Console.WriteLine($"Length = {d.Length}");
                 d[7] = 9;
-                if (d.Remove(3))
-                {
-                    Console.WriteLine("Element was deleted");
-                }
-
                 Console.WriteLine("Negative index " + d[-8]);
                 Console.WriteLine("Dynamic array:");
                 foreach (var i in d)
                 {
                     Console.WriteLine(i);
                 }
-
+                if (d.Remove(3))
+                {
+                    Console.WriteLine("Element was deleted");
+                }
                 DynamicArray<int> dc = (DynamicArray<int>)d.Clone();
                 Console.WriteLine("Dynamic array clone:");
                 Console.WriteLine($"Capacity = {dc.Capacity}");
