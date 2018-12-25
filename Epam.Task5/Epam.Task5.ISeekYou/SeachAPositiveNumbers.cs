@@ -44,7 +44,7 @@ namespace Epam.Task5.ISeekYou
             List<T> newArray = new List<T>();
             foreach (T item in collection)
             {
-                if (func(item))
+                if (func != null && func.Invoke(item))
                 {
                     newArray.Add(item);
                 }
