@@ -103,10 +103,10 @@ namespace Epam.Task7.ConsolePL
                         Console.Write("Enter user's lastname: ");
                         string lastname = Console.ReadLine();
                         Console.Write("Enter user's date of birth yyyy.mm.dd: ");
-                        DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
 
                         try
                         {
+                            DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
                             this.userLogic.Add(new User(name, lastname, dateOfBirth));
                         }
                         catch (ArgumentNullException nullEx)
@@ -188,10 +188,11 @@ namespace Epam.Task7.ConsolePL
                         Console.Write("Enter user's lastname: ");
                         string lastname = Console.ReadLine();
                         Console.Write("Enter user's date of birth: ");
-                        DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
 
                         try
                         {
+                            DateTime dateOfBirth = DateTime.Parse(Console.ReadLine());
+
                             this.userLogic.Update(new User(idUser, name, lastname, dateOfBirth));
                         }
                         catch (ArgumentNullException nullEx)
