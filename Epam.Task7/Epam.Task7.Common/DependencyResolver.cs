@@ -55,7 +55,7 @@ namespace Epam.Task7.Common
                     {
                         case "memory":
                             {
-                                userDao = new UserFakeDao();
+                                userDao = new UserMemoryDao();
                                 break;
                             }
 
@@ -89,7 +89,7 @@ namespace Epam.Task7.Common
                     {
                         case "memory":
                             {
-                                awardDao = new AwardFakeDao();
+                                awardDao = new AwardMemoryDao();
                                 break;
                             }
 

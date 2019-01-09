@@ -70,8 +70,8 @@ namespace Epam.Task7.ConsolePL
 
                 case ConsoleKey.D5:
                     {
-                        Console.WriteLine("\nALL CHANGES SAVED\n");
-                        this.Save();
+                        Console.WriteLine("\nEXIT\n");
+                        this.Terminate();
                         return;
                     }
 
@@ -446,12 +446,12 @@ namespace Epam.Task7.ConsolePL
         }
 
         /// <summary>
-        /// Menu action - save
+        /// Menu action - Terminate
         /// </summary>
-        private void Save()
+        private void Terminate()
         {
-            this.userLogic.Save();
-            this.awardLogic.Save();
+            this.userLogic.Terminate();
+            this.awardLogic.Terminate();
         }
     }
 }

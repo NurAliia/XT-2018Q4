@@ -1,4 +1,4 @@
-﻿// <copyright file="AwardFakeDao.cs" company="Epam">
+﻿// <copyright file="AwardMemoryDao.cs" company="Epam">
 //     Copyright Epam. All rights reserved 
 // </copyright>
 
@@ -11,34 +11,14 @@ namespace Epam.Task7.DAL
     using Epam.Task7.Entities;
 
     /// <summary>  
-    ///  This class describes a AwardFakeDao.
+    ///  This class describes a AwardMemoryDao.
     /// </summary>  
-    public class AwardFakeDao : IAwardDao
+    public class AwardMemoryDao : IAwardDao
     {
         /// <summary>
         /// Declare variable repo awards
         /// </summary>
         private static readonly Dictionary<int, Award> REPOAWARDS = new Dictionary<int, Award>();
-
-        /// <summary>
-        ///  Initializes a new instance of the <see cref="AwardFakeDao" /> class
-        /// </summary>  
-        public AwardFakeDao()
-        {
-            List<Award> listAwards = new List<Award>();
-            using (StreamReader sr = new StreamReader(@".\Awards.txt", System.Text.Encoding.Default))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    var user = line.Split('|');
-                    var newAward = new Award(user[2]);
-                    newAward.Id = int.Parse(user[0]);
-                    newAward.IdUser = int.Parse(user[1]);
-                    REPOAWARDS.Add(int.Parse(user[0]), newAward);
-                }
-            }
-        }
 
         /// <summary>
         /// Add new award
@@ -140,13 +120,6 @@ namespace Epam.Task7.DAL
         /// </summary>
         public void Terminate()
         {
-            using (StreamWriter sw = new StreamWriter(@".\Awards.txt", false, System.Text.Encoding.Default))
-            {
-                foreach (var item in REPOAWARDS)
-                {
-                    sw.WriteLine(item.Value.ToStringForFile());
-                }
-            }
         }
     }
 }

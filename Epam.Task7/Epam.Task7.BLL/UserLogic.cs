@@ -112,11 +112,11 @@ namespace Epam.Task7.BLL
         }
 
         /// <summary>
-        /// Save users into file
+        /// Terminate work with users into file
         /// </summary>
-        public void Save()
+        public void Terminate()
         {
-            this.userDao.Save();
+            this.userDao.Terminate();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// <copyright file="UserFakeDao.cs" company="Epam">
+﻿// <copyright file="UserMemoryDao.cs" company="Epam">
 //     Copyright Epam. All rights reserved 
 // </copyright>
 
@@ -12,35 +12,14 @@ namespace Epam.Task7.DAL
     using Epam.Task7.Entities;
 
     /// <summary>  
-    ///  This class describes a UserFakeDao.
+    ///  This class describes a UserMemoryDao.
     /// </summary>  
-    public class UserFakeDao : IUserDao
+    public class UserMemoryDao : IUserDao
     {
         /// <summary>
         /// Declare variable repo users
         /// </summary>
         private static readonly Dictionary<int, User> REPOUSERS = new Dictionary<int, User>();
-
-        /// <summary>
-        ///  Initializes a new instance of the <see cref="UserFakeDao" /> class
-        /// </summary>  
-        public UserFakeDao()
-        {
-            using (StreamReader sr = new StreamReader(@".\Users.txt", System.Text.Encoding.Default))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    var user = line.Split('|');
-                    var newUser = new User();
-                    newUser.Id = int.Parse(user[0]);
-                    newUser.Name = user[1];
-                    newUser.LastName = user[2];
-                    newUser.DateOfBirth = DateTime.Parse(user[3]);
-                    REPOUSERS.Add(int.Parse(user[0]), newUser);
-                }
-            }
-        }
 
         /// <summary>
         /// Add new user
@@ -103,17 +82,10 @@ namespace Epam.Task7.DAL
         }
 
         /// <summary>
-        /// Save users into file
+        /// Terminate users into file
         /// </summary>
         public void Terminate()
         {
-            using (StreamWriter sw = new StreamWriter(@".\Users.txt", false, System.Text.Encoding.Default))
-            {
-                foreach (var item in REPOUSERS)
-                {
-                    sw.WriteLine(item.Value.ToStringForFile());
-                }
-            }
         }
     }
 }

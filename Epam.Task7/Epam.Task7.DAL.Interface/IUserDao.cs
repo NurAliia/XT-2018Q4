@@ -48,6 +48,6 @@ namespace Epam.Task7.DAL.Interface
         /// <summary>
         /// Save users into file
         /// </summary>
-        void Save();
+        void Terminate();
     }
 }

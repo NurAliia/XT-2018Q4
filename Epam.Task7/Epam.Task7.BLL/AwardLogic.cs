@@ -163,11 +163,11 @@ namespace Epam.Task7.BLL
         }
 
         /// <summary>
-        /// Save awards into file
+        /// Terminate work with awards into file
         /// </summary>
-        public void Save()
+        public void Terminate()
         {
-            this.awardDao.Save();
+            this.awardDao.Terminate();
         }
     }
 }

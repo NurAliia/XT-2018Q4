@@ -44,8 +44,8 @@ namespace Epam.Task7.BLL.Interface
         IEnumerable<User> GetAll();
 
         /// <summary>
-        /// Save users into file
+        /// Terminate work with users into file
         /// </summary>
-        void Save();
+        void Terminate();
     }
 }

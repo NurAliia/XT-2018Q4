@@ -62,8 +62,8 @@ namespace Epam.Task7.BLL.Interface
         IEnumerable<Award> GetAllByUserId(int idUser);
 
         /// <summary>
-        /// Save awards into file
+        /// Terminate work with awards into file
         /// </summary>
-        void Save();
+        void Terminate();
     }
 }

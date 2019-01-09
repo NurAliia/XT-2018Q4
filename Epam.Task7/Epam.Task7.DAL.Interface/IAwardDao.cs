@@ -62,6 +62,6 @@ namespace Epam.Task7.DAL.Interface
         /// <summary>
         /// Save awards into file
         /// </summary>
-        void Save();
+        void Terminate();
     }
 }
